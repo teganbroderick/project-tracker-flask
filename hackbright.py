@@ -35,7 +35,7 @@ def get_student_by_github(github):
 
     print(f"Student: {row[0]} {row[1]}\nGitHub account: {row[2]}")
 
-    return row
+    return row   #returns a tuple of (first name, last name, github)
 
 
 def make_new_student(first_name, last_name, github):
