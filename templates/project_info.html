@@ -8,5 +8,13 @@
    <p>Title: {{ title }}</p> 
    <p>Description: {{ description }}</p> 
     <p>Max_grade: {{ max_grade }}</p>
+
+
+    {% for row in github_and_grade %}
+      <ul>  
+        <li>Student: {{ row[0] }}</li>
+        <li>Grade: {{ row[1] }}</li>
+    </ul>
+{% endfor %}
 </body>
 </html>

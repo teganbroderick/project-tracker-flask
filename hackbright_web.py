@@ -68,7 +68,15 @@ def show_project():
 
     title, description, max_grade = hackbright.get_project_by_title(project_title)
 
-    return render_template('project_info.html', title=title, description=description, max_grade=max_grade)
+    #return list of tuples
+    github_and_grade = hackbright.get_grades_by_title(project_title) 
+
+
+    return render_template('project_info.html', 
+                            title=title, 
+                            description=description, 
+                            max_grade=max_grade, 
+                            github_and_grade=github_and_grade)
 
 
 
