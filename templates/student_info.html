@@ -10,7 +10,7 @@
 
    
         {% for row in project_and_grade %}
-           <ul> <li>Project title: {{ row[0] }}</li>
+           <ul> <li><a href="/project?project_title={{ row[0] }}">Project title:</a> {{ row[0] }}</li> 
             <li>Grade: {{ row[1] }}</li></ul>
         {% endfor %}
     

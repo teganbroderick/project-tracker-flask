@@ -54,6 +54,25 @@ def send_confirmation():
     return render_template('add_confirmation.html', github=github)
 
 
+@app.route('/get-project-title')
+def get_project_title():
+    '''Get project title'''
+
+    return render_template('get_project_title.html')
+
+@app.route('/project')
+def show_project():
+    '''Show project info when given title'''
+
+    project_title = request.args.get('project_title')
+
+    title, description, max_grade = hackbright.get_project_by_title(project_title)
+
+    return render_template('project_info.html', title=title, description=description, max_grade=max_grade)
+
+
+
+
 if __name__ == "__main__":
     hackbright.connect_to_db(app)
     app.run(debug=True)
